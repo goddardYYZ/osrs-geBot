@@ -42,4 +42,4 @@ For development and contributions to the AutoTraderPlugin:
 
 ## Support
 
-For support or issues, please [open an issue]((https://github.com/goddardYYZ/osrs-geBot)/issues) on GitHub.
+For support or issues, please [open an issue](https://github.com/goddardYYZ/osrs-geBot/issues) on GitHub.

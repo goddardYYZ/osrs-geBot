@@ -39,10 +39,6 @@ For development and contributions to the AutoTraderPlugin:
 3. Make changes or improvements as needed.
 4. Submit a pull request with your changes for review.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Support
 
 For support or issues, please [open an issue](https://github.com/your-repo/issues) on GitHub.

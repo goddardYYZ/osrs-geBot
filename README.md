@@ -39,4 +39,4 @@ Contributions are welcome! Feel free to fork this repository and submit pull req
 
 ## License
 
-This project is
+This project is FREE TO USE

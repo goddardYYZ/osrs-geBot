@@ -7,6 +7,8 @@ AutoTraderPlugin is a plugin for the RuneLite client that automates buying and s
 - Automatically buys and sells items on the GE based on predefined rules.
 - Fetches current buy and sell prices dynamically from the game using RuneLite's API.
 - Configurable settings for item selection, buy/sell quantities, and profit thresholds.
+- Prevents selling at a loss.
+- Stops buying when maximum item stock is reached.
 
 ## Installation
 
@@ -25,10 +27,9 @@ AutoTraderPlugin is a plugin for the RuneLite client that automates buying and s
 
 You can configure the AutoTraderPlugin by adjusting the settings through the RuneLite client interface:
 
-- **Item to Trade:** Specify the name of the item to trade on the GE.
-- **Buy Price:** Set the buy price based on the current market value fetched by the plugin.
-- **Sell Price:** Set the sell price based on the current market value fetched by the plugin.
-- **Quantity:** Define the quantity of items to buy or sell per transaction.
+- **Item to Buy:** Specify the name of the item to trade on the GE.
+- **Buy Quantity:** Define the quantity of items to buy per transaction.
+- **Max Stock:** Set the maximum stock of an item before stopping further purchases.
 
 ## Development
 

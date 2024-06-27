@@ -59,9 +59,16 @@ public class AutoTraderPlugin extends Plugin
             if (buying)
             {
                 int buyPrice = getCurrentBuyPrice(config.itemToBuy());
-                if (buyPrice > 0)
+                int maxStock = config.maxStock();
+                int currentStock = getCurrentStock(config.itemToBuy());
+
+                // Check if buying would exceed max stock limit
+                if (currentStock < maxStock)
                 {
-                    buyItem(config.itemToBuy(), buyPrice, config.quantity());
+                    if (buyPrice > 0)
+                    {
+                        buyItem(config.itemToBuy(), buyPrice, config.quantity());
+                    }
                 }
             }
             else
@@ -69,7 +76,11 @@ public class AutoTraderPlugin extends Plugin
                 int sellPrice = getCurrentSellPrice(config.itemToBuy());
                 if (sellPrice > 0)
                 {
-                    sellItem(config.itemToBuy(), sellPrice, config.quantity());
+                    // Check if selling would not result in a loss
+                    if (canSellAtProfit(config.itemToBuy(), sellPrice))
+                    {
+                        sellItem(config.itemToBuy(), sellPrice, config.quantity());
+                    }
                 }
             }
         });
@@ -93,6 +104,19 @@ public class AutoTraderPlugin extends Plugin
             return item.getPrice();
         }
         return -1; // Return a default value or handle error
+    }
+
+    private int getCurrentStock(String itemName)
+    {
+        // Replace with logic to fetch current stock of itemName
+        // Example: return current stock from a data structure or variable
+        return 0;
+    }
+
+    private boolean canSellAtProfit(String itemName, int sellPrice)
+    {
+        int buyPrice = getCurrentBuyPrice(itemName);
+        return sellPrice > buyPrice;
     }
 
     private void buyItem(String itemName, int price, int quantity)
@@ -338,7 +362,7 @@ public class AutoTraderPlugin extends Plugin
 
     private void enterAmount(int amount)
     {
-        // Simulate typing the amount
-        client.setVarbit(Varbits.GRAND_EXCHANGE_PRICE, amount);
+        clientThread.invoke(() -> client.setVar(VarClientInt.INPUT_TYPE, 5));
+        client.setVar(VarClientInt.INPUT_VALUE, amount);
     }
 }

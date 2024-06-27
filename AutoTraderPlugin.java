@@ -1,7 +1,6 @@
 import net.runelite.api.*;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.GameTick;
-import net.runelite.api.widgets.Widget;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -59,13 +58,41 @@ public class AutoTraderPlugin extends Plugin
         clientThread.invoke(() -> {
             if (buying)
             {
-                buyItem(config.itemToBuy(), config.buyPrice(), config.quantity());
+                int buyPrice = getCurrentBuyPrice(config.itemToBuy());
+                if (buyPrice > 0)
+                {
+                    buyItem(config.itemToBuy(), buyPrice, config.quantity());
+                }
             }
             else
             {
-                sellItem(config.itemToBuy(), config.sellPrice(), config.quantity());
+                int sellPrice = getCurrentSellPrice(config.itemToBuy());
+                if (sellPrice > 0)
+                {
+                    sellItem(config.itemToBuy(), sellPrice, config.quantity());
+                }
             }
         });
+    }
+
+    private int getCurrentBuyPrice(String itemName)
+    {
+        ItemComposition item = itemManager.getItemDefinition(itemManager.search(itemName).get(0).getId());
+        if (item != null)
+        {
+            return item.getPrice();
+        }
+        return -1; // Return a default value or handle error
+    }
+
+    private int getCurrentSellPrice(String itemName)
+    {
+        ItemComposition item = itemManager.getItemDefinition(itemManager.search(itemName).get(0).getId());
+        if (item != null)
+        {
+            return item.getPrice();
+        }
+        return -1; // Return a default value or handle error
     }
 
     private void buyItem(String itemName, int price, int quantity)

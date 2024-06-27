@@ -1,42 +1,48 @@
-# Auto Trader Plugin
+# AutoTraderPlugin
 
-Automatically buys and sells items on the Grand Exchange (GE) in Old School RuneScape (OSRS) to make a profit.
+AutoTraderPlugin is a plugin for the RuneLite client that automates buying and selling items on the Grand Exchange (GE) in Old School RuneScape (OSRS) to make a profit.
+
+## Features
+
+- Automatically buys and sells items on the GE based on predefined rules.
+- Fetches current buy and sell prices dynamically from the game using RuneLite's API.
+- Configurable settings for item selection, buy/sell quantities, and profit thresholds.
 
 ## Installation
 
-1. Ensure you have the latest version of the RuneLite client installed.
-2. Clone this repository or download the ZIP file.
+1. Ensure you have the [RuneLite](https://runelite.net/) client installed.
+2. Download the `AutoTraderPlugin.jar` file from the releases.
+3. Place the downloaded `AutoTraderPlugin.jar` file into your RuneLite plugins directory.
 
 ## Usage
 
-1. Start the RuneLite client.
-2. Load the plugin by adding it to your plugins list in the RuneLite settings.
-3. Customize the plugin settings in the RuneLite configuration under Auto Trader.
+1. Open the RuneLite client and navigate to the Plugins menu.
+2. Enable the AutoTraderPlugin from the list of available plugins.
+3. Configure the plugin settings including the item to trade, buy/sell quantities, and profit margins.
+4. The plugin will automatically start buying and selling items on the GE according to your configured settings.
 
 ## Configuration
 
-Configure the following parameters in the RuneLite configuration:
+You can configure the AutoTraderPlugin by adjusting the settings through the RuneLite client interface:
 
-- **Item to Buy**: The name of the item you want to buy on the GE.
-- **Buy Price**: The price per unit to buy the item at.
-- **Sell Price**: The price per unit to sell the item at.
-- **Quantity**: The quantity of items to buy or sell.
+- **Item to Trade:** Specify the name of the item to trade on the GE.
+- **Buy Price:** Set the buy price based on the current market value fetched by the plugin.
+- **Sell Price:** Set the sell price based on the current market value fetched by the plugin.
+- **Quantity:** Define the quantity of items to buy or sell per transaction.
 
-## Functionality
+## Development
 
-- The plugin automatically alternates between buying and selling based on configured parameters.
-- It interacts with the GE interface to search for items, set prices, quantities, and confirm transactions.
-- Errors and interface changes are handled through widget checks and retries.
+For development and contributions to the AutoTraderPlugin:
 
-## Notes
-
-- Automating interactions in games can violate terms of service and rules. Use this plugin responsibly and at your own risk.
-- This plugin is for educational purposes and can be used for personal use only.
-
-## Contributing
-
-Contributions are welcome! Feel free to fork this repository and submit pull requests with improvements.
+1. Clone the repository.
+2. Import the project into your preferred IDE.
+3. Make changes or improvements as needed.
+4. Submit a pull request with your changes for review.
 
 ## License
 
-This project is FREE TO USE
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For support or issues, please [open an issue](https://github.com/your-repo/issues) on GitHub.

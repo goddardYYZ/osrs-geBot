@@ -39,7 +39,6 @@ For development and contributions to the AutoTraderPlugin:
 2. Import the project into your preferred IDE.
 3. Make changes or improvements as needed.
 4. Submit a pull request with your changes for review.
-5. testing
 
 ## Support
 
